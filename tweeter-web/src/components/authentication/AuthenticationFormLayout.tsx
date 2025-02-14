@@ -1,6 +1,5 @@
 import OAuth from "./OAuth";
 
-
 interface Props {
   headingText: string;
   submitButtonLabel: string;
@@ -14,10 +13,6 @@ interface Props {
 }
 
 const AuthenticationFormLayout = (props: Props) => {
-
-
-
-
   return (
     <div className={props.isLoading ? "loading" : ""}>
       <div className="center">
@@ -38,7 +33,13 @@ const AuthenticationFormLayout = (props: Props) => {
             <h1 className="h5 mb-3 fw-normal">{props.oAuthHeading}</h1>
 
 
-            <OAuth/>
+            <div className="text-center mb-3">
+              <OAuth name="Google" tooltip="googleTooltip" icon={["fab", "google"]}/>
+              <OAuth name="Facebook" tooltip="facebookTooltip" icon={["fab", "facebook"]}/>
+              <OAuth name="Twitter" tooltip="twitterTooltip" icon={["fab", "twitter"]}/>
+              <OAuth name="LinkedIn" tooltip="linkedInTooltip" icon={["fab", "linkedin"]}/>
+              <OAuth name="GitHub" tooltip="githubTooltip" icon={["fab", "github"]}/>
+            </div>
 
             <div className="checkbox mb-3">
               <label>
